@@ -1,4 +1,4 @@
-package lt.techin;
+package lt.magento;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -111,6 +111,7 @@ public class WomenPage extends BasePage {
     public String itemInCartMessage() {
         return itemInCart.getText();
     }
+
     public void clickCheckOut() {
         checkoutButton.click();
     }

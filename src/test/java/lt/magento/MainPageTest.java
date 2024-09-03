@@ -1,9 +1,6 @@
-package lt.techin;
+package lt.magento;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
@@ -23,6 +20,10 @@ public class MainPageTest extends BasePageTest {
         mainPage.selectMenButton();
         menPage.selectHoodiesButton();
         assertEquals("Hoodies & Sweatshirts", menPage.titleMenDisplayed(), "The page was not redirected to Men page");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        assertEquals("12", menPage.numberPerPage(), "Number is not set to 12");
+        assertTrue(menPage.element12.isDisplayed(), "12th item is displayed");
     }
 
     @Test

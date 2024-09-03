@@ -1,17 +1,12 @@
-package lt.techin;
+package lt.magento;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
-public class MenPage extends BasePage{
+public class MenPage extends BasePage {
 
     @FindBy(xpath = "/html//main[@id='maincontent']/div[@class='columns']//div[@class='categories-menu']/ul[1]//a[@href='https://magento.softwaretestingboard.com/men/tops-men/hoodies-and-sweatshirts-men.html']")
     WebElement hoodiesSweatshirts;
@@ -27,36 +22,42 @@ public class MenPage extends BasePage{
 
     @FindBy(id = "option-label-color-93-item-60")
     WebElement color;
-     @FindBy(id = "qty")
-     WebElement qty;
 
-     @FindBy(id = "product-addtocart-button")
-     WebElement addToCartButton;
+    @FindBy(id = "qty")
+    WebElement qty;
 
-     @FindBy(css = ".counter-number")
-     WebElement cartItems;
+    @FindBy(id = "product-addtocart-button")
+    WebElement addToCartButton;
 
-     @FindBy(css = "[data-ui-id='message-success']")
-     WebElement messageAddedToCart;
+    @FindBy(css = ".counter-number")
+    WebElement cartItems;
 
-     @FindBy(css = ".action.viewcart > span")
-     WebElement viewCart;
+    @FindBy(css = "[data-ui-id='message-success']")
+    WebElement messageAddedToCart;
 
-     @FindBy(css = ".col.item  strong > a")
-     WebElement itemName;
+    @FindBy(css = ".action.viewcart > span")
+    WebElement viewCart;
 
-     @FindBy(css = ".checkout.checkout-methods-items.items.methods  button[title='Proceed to Checkout']")
-     WebElement proceedCheckout;
+    @FindBy(css = ".col.item  strong > a")
+    WebElement itemName;
 
-     @FindBy(css = ".ea-stickybox-hide")
-     WebElement advertisement;
+    @FindBy(css = ".checkout.checkout-methods-items.items.methods  button[title='Proceed to Checkout']")
+    WebElement proceedCheckout;
 
+    @FindBy(css = ".ea-stickybox-hide")
+    WebElement advertisement;
+
+    @FindBy(css = ".toolbar-products:nth-child(5) [value='12']")
+    WebElement showPerPageNumber;
+
+    @FindBy(css = ".product-item:nth-of-type(12)")
+    WebElement element12;
 
     public MenPage(WebDriver driver) {
         super(driver);
     }
 
-    public void selectHoodiesButton(){
+    public void selectHoodiesButton() {
         hoodiesSweatshirts.click();
     }
 
@@ -64,24 +65,24 @@ public class MenPage extends BasePage{
         return titleMen.getText();
     }
 
-    public void openFrankieItem(){
+    public void openFrankieItem() {
         frankieShirt.click();
     }
 
-    public void selectSize(){
+    public void selectSize() {
         size.click();
     }
 
-    public void selectColor(){
+    public void selectColor() {
         color.click();
     }
 
-    public void selectQty(){
+    public void selectQty() {
         qty.clear();
         qty.sendKeys("2");
     }
 
-    public void addToCart(){
+    public void addToCart() {
         addToCartButton.click();
     }
 
@@ -89,7 +90,7 @@ public class MenPage extends BasePage{
         return cartItems.getText();
     }
 
-    public void openCart(){
+    public void openCart() {
         cartItems.click();
         viewCart.click();
     }
@@ -98,11 +99,15 @@ public class MenPage extends BasePage{
         return itemName.getText();
     }
 
-    public void setProceedCheckout(){
+    public void setProceedCheckout() {
         proceedCheckout.click();
     }
-    public void closeAdvertisement(){
+
+    public void closeAdvertisement() {
         advertisement.click();
     }
 
+    public String numberPerPage() {
+        return showPerPageNumber.getText();
+    }
 }

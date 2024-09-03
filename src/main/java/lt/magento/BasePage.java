@@ -1,4 +1,4 @@
-package lt.techin;
+package lt.magento;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

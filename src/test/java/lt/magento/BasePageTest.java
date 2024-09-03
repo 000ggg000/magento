@@ -1,4 +1,4 @@
-package lt.techin;
+package lt.magento;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,10 +21,10 @@ public class BasePageTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-//    @AfterEach
-//    void closeDown() {
-//
-//        this.driver.quit();
-//    }
+    @AfterEach
+    void closeDown() {
+
+        this.driver.quit();
+    }
 
 }

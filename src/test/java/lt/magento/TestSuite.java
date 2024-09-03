@@ -1,4 +1,4 @@
-package lt.techin;
+package lt.magento;
 
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;

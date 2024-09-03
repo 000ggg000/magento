@@ -1,11 +1,10 @@
-package lt.techin;
+package lt.magento;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.JavascriptExecutor;
 
-public class CheckoutPage extends BasePage{
+public class CheckoutPage extends BasePage {
 
     @FindBy(id = "customer-email")
     WebElement email;
@@ -31,7 +30,7 @@ public class CheckoutPage extends BasePage{
     @FindBy(css = "input[name='postcode']")
     WebElement postCode;
 
-    @FindBy(css = "select#KADW9ER")
+    @FindBy(css = "//div[@id='shipping-new-address-form']/*[9]/div/select")
     WebElement country;
 
     @FindBy(css = "input[name='telephone']")
@@ -57,56 +56,64 @@ public class CheckoutPage extends BasePage{
         super(driver);
     }
 
-    public void setEmail(){
+    public void setEmail() {
         email.sendKeys("twoday@twoday.lt");
     }
-    public void setName(){
+
+    public void setName() {
         name.sendKeys("John");
     }
-    public void setLastName(){
+
+    public void setLastName() {
         lastName.sendKeys("Dow");
     }
-    public void setCompany(){
+
+    public void setCompany() {
         company.sendKeys("Twoday");
     }
 
-
-    public void setAddress(){
+    public void setAddress() {
         address.sendKeys("The Center 5");
     }
-    public void setCity(){
+
+    public void setCity() {
         city.sendKeys("Netherland");
     }
-    public void setState(){
+
+    public void setState() {
         state.sendKeys("Alaska");
     }
-    public void setPostCode(){
+
+    public void setPostCode() {
         postCode.sendKeys("12345-6789");
     }
-    public void setCountry(){
+
+    public void setCountry() {
         country.sendKeys("United States");
     }
-    public void setPhone(){
+
+    public void setPhone() {
         phone.sendKeys("12346789");
     }
-    public void setShippingMethod(){
+
+    public void setShippingMethod() {
         shippingMethod.click();
     }
-    public void clickNext(){
+
+    public void clickNext() {
         next.click();
     }
 
-    public void makeOrder(){
+    public void makeOrder() {
         placeOrderButton.click();
     }
 
-    public void removeAdvertisement2(){
+    public void removeAdvertisement2() {
         advertisement2.click();
     }
 
     public String titlePurchaseDisplayed() {
         return purchaseText.getText();
     }
-
 
 }
