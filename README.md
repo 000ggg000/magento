@@ -6,9 +6,15 @@ Project is dedicated to write few automated tests to check navigation bar, sorti
 
 For running tests it is needed to install Java. I use Maven project.
 From the mvnrepository.com need to take dependencies:
+<<<<<<< HEAD
 * Selenium;
 * Webdriver manager;
 * Chromedriver (if needed).
+=======
+ * Selenium;
+ * Webdriver manager;
+ * Chromedriver (if needed).
+>>>>>>> 4afbea1409168dea279bb1f2f3b14eb79ce26a0d
 
 ### Usage
 
